@@ -5,7 +5,7 @@
 2. Under folder selectfuzz: make clean all
 3. Under folder selectfuzz/llvm-mode: make clean all, error message "recipe for target 'test_build' failed" can be ignored.
 
-## Docker
+## Docker (Recommended)
 
 Alternatively, you can use our provided [docker image](https://hub.docker.com/r/selectivefuzz1/selectfuzz).
 
