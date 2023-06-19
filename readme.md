@@ -15,8 +15,6 @@ We have installed all required dependencies in Docker. You thus do NOT need to i
 
 Under the folder selectfuzz/scripts/fuzz: run *.sh to fuzz the programs. 
 
-You can check distance files, e.g., /selectfuzz/scripts/fuzz/libming-CVE-2018-8807/obj-aflgo/temp/distance.cfg.txt if you run CVE-2018-8807, to see if the fuzzer runs correctly. The distance file should contain some distance information if the fuzzer runs correctly.
-
 You can also write shell scripts to fuzz other programs by following the samples.
 
 We also provide shell scripts to help check the fuzzing results (you need to check if the program crashes at the "target location").
@@ -44,6 +42,12 @@ SelectFuzz is not effective when the path constraints to fuzzing targets are dif
 We leveraged [1] to perform inter-procedural data-flow analysis and find relevant code. The more advanced data-flow analysis will definitely improve SelectFuzz's performance.
 
 [1] Temporal system call specialization for attack surface reduction, Usenix Security Symposium 2020.
+
+4. __How do I check if the fuzzer runs correctly__?
+
+SelectFuzz would NOT report errors. To see if the fuzzer runs correctly, you can check the distance files, e.g., /selectfuzz/scripts/fuzz/libming-CVE-2018-8807/obj-aflgo/temp/distance.cfg.txt if you run CVE-2018-8807. The distance file should contain some distance information if things run correctly.
+
+If there is no distance information, please check /selectfuzz/scripts/fuzz/CVE/obj-aflgo/temp/real.txt. If it starts with $, delete $ in the scripts (e.g., $ in "echo $'decompile.c:349' > $TMP_DIR/real.txt" in /selectfuzz/scripts/fuzz/libming-CVE-2018-8807.sh). If it does not work or if you meet other issues, please contact me at <chluo@cse.cuhk.edu.hk>.
 
 ## License
 
