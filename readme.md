@@ -15,6 +15,8 @@ We have installed all required dependencies in Docker. You thus do NOT need to i
 
 Under the folder selectfuzz/scripts/fuzz: run *.sh to fuzz the programs. 
 
+You can check distance files, e.g., /selectfuzz/scripts/fuzz/libming-CVE-2018-8807/obj-aflgo/temp/distance.cfg.txt if you run CVE-2018-8807, to see if the fuzzer runs correctly. The distance file should contain some distance information if the fuzzer runs correctly.
+
 You can also write shell scripts to fuzz other programs by following the samples.
 
 We also provide shell scripts to help check the fuzzing results (you need to check if the program crashes at the "target location").
