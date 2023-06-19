@@ -27,7 +27,7 @@ The folder names are the CVE numbers we tested.
 If the folder contains obj-dist, then check the fuzzing results (e.g., the time used and the crash PoCs) in obj-dist/out;
 Otherwise, check the results in obj-aflgo/out;
 
-## QA:
+# QAs:
 
 1. Why is SelectFuzz effective?
 
@@ -43,11 +43,11 @@ We leveraged [1] to perform inter-procedural data-flow analysis and find relevan
 
 [1] Temporal system call specialization for attack surface reduction, Usenix Security Symposium 2020.
 
-4. __How do I check if the fuzzer runs correctly__?
+4. __Important: How do I check if the fuzzer runs correctly__?
 
 SelectFuzz would NOT report errors. To see if the fuzzer runs correctly, you can check the distance files, e.g., /selectfuzz/scripts/fuzz/libming-CVE-2018-8807/obj-aflgo/temp/distance.cfg.txt if you run CVE-2018-8807. The distance file should contain some distance information if things run correctly.
 
-If there is no distance information, please check /selectfuzz/scripts/fuzz/CVE/obj-aflgo/temp/real.txt. If it starts with $, delete $ in the scripts (e.g., $ in "echo $'decompile.c:349' > $TMP_DIR/real.txt" in /selectfuzz/scripts/fuzz/libming-CVE-2018-8807.sh). If it does not work or if you meet other issues, please contact me at <chluo@cse.cuhk.edu.hk>.
+If there is no distance information, it means there are something wrong. Please check /selectfuzz/scripts/fuzz/CVE/obj-aflgo/temp/real.txt. If it starts with $, delete $ in the scripts (e.g., the first $ in "echo $'decompile.c:349' > $TMP_DIR/real.txt" in /selectfuzz/scripts/fuzz/libming-CVE-2018-8807.sh). If it does not work or if you meet other issues, please contact me at <chluo@cse.cuhk.edu.hk>.
 
 ## License
 
