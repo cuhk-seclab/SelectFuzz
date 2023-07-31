@@ -11,6 +11,15 @@ Alternatively, you can use our provided [docker image](https://hub.docker.com/r/
 
 We have installed all required dependencies in Docker. You thus do NOT need to install it yourself.
 
+**Important:**
+
+We use a lab proxy in Docker. To run the scripts, you must unset the proxy so that you can access network and download seeds!
+
+```tex
+unset https_proxy
+unset http_proxy
+```
+
 # Run SelectFuzz:
 
 Under the folder selectfuzz/scripts/fuzz: run *.sh to fuzz the programs. 
