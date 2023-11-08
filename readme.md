@@ -18,6 +18,8 @@ We use a lab proxy in Docker. To run the scripts, you must unset the proxy so th
 ```tex
 unset https_proxy
 unset http_proxy
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 ```
 
 # Run SelectFuzz:
