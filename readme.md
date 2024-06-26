@@ -60,7 +60,7 @@ SelectFuzz would NOT report errors. To see if the fuzzer runs correctly, you can
 
 If there is no distance information, it means there are something wrong. Please check /selectfuzz/scripts/fuzz/CVE/obj-aflgo/temp/real.txt. If it starts with $, delete $ in the scripts (e.g., the first $ in "echo $'decompile.c:349' > $TMP_DIR/real.txt" in /selectfuzz/scripts/fuzz/libming-CVE-2018-8807.sh). If it does not work or if you meet other issues, please contact me at <chluo@cse.cuhk.edu.hk>.
 
-5. About issues in Objdump.
+5. __Important: About issues in Objdump__?
 
 See https://github.com/cuhk-seclab/SelectFuzz/issues/19#issue-2371904236
 
